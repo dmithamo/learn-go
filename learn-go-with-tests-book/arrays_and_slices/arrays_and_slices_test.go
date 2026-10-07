@@ -34,8 +34,8 @@ func TestMultiSliceSums(t *testing.T) {
 }
 
 func TestMultiSliceSumTails(t *testing.T) {
-	given := [][]int{[]int{1, 2, 3, 4, 5}, []int{2, 3, 4, 5, 6}, []int{1, 2}, []int{0, 9}}
-	want := []int{14, 18, 2, 9}
+	given := [][]int{{1, 2, 3, 4, 5}, {2, 3, 4, 5, 6}, {1, 2}, {0, 9}, {}}
+	want := []int{14, 18, 2, 9, 0}
 	t.Run("handles several non-empty slices", func(t *testing.T) {
 		got := MultiSliceSumTails(given)
 		testinghelpers.AssetCorrectMsg(t, got, want, given)
